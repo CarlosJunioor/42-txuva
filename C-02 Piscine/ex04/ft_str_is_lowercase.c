@@ -1,45 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/16 16:18:19 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/17 12:40:12 by carloda-         ###   ########.fr       */
+/*   Created: 2022/08/17 17:35:02 by carloda-          #+#    #+#             */
+/*   Updated: 2022/08/17 18:15:49 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int ft_str_is_lowercase(char *str)
 {
-	unsigned int count;
-	
-	count = 0;
-	
-	while (src[count] && count < n)
+    while (*str)
 	{
-		dest[count] = src[count];
-		count++;
+		if (*str < 'a' || *str > 'z')
+			return (0);
+		++str;
 	}
-	while (count < n)
-	{
-		dest[count] = '\0';
-		count++;
-	}
-	return (dest);
+	return (1);
+
 }
 
-/*
 int main(void)
 {
-	char string_dest[] = "";
-	char string_src[] = "abc";
-	int lenght = sizeof(string_src)/sizeof(string_src[0]);
-
-	ft_strncpy(string_dest, string_src, lenght);
-	
-	printf("%s :", string_dest);
-	
-}*/
+	char str[] = "sdfg";
+//char str[] = "";
+//	printf("%d \n", str);
+	printf("%d", ft_str_is_lowercase(str));
+	return (0);
+}
