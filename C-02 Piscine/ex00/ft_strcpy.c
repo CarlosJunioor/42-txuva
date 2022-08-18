@@ -6,7 +6,7 @@
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 20:50:34 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/16 16:17:34 by carloda-         ###   ########.fr       */
+/*   Updated: 2022/08/18 14:02:00 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,15 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-int main(void)
-{
-	char dest[] = "";
-	char sour[] = "madebybrazil";
+// int main(void)
+// {
+// 	char dest[] = "";
+// 	char sour[] = "madebybrazil";
 
-	printf("%s\n", dest);
-	printf("%s\n", sour);
+// 	printf("%s\n", dest);
+// 	printf("%s\n", sour);
 
-	ft_strcpy(dest, sour);	
+// 	ft_strcpy(dest, sour);	
 
-	printf("after copying: %s\n", dest);
-	
-}
+// 	printf("after copying: %s\n", dest);
+// }

@@ -6,7 +6,7 @@
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 16:18:19 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/17 12:40:12 by carloda-         ###   ########.fr       */
+/*   Updated: 2022/08/18 13:48:44 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int count;
-	
+	unsigned int	count;
+
 	count = 0;
-	
 	while (src[count] && count < n)
 	{
 		dest[count] = src[count];
@@ -42,4 +41,5 @@ int main(void)
 	
 	printf("%s :", string_dest);
 	
-}*/
+}
+*/
