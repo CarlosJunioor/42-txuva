@@ -6,7 +6,7 @@
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 16:51:21 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/18 15:23:32 by carloda-         ###   ########.fr       */
+/*   Updated: 2022/08/18 18:35:01 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ int	ft_str_is_numeric(char *str)
 	while (str[count] != '\0')
 	{
 		if (str[count] < '0' || str[count] > '9')
-		{
 			return (0);
-		}
 		count++;
 	}
 	return (1);

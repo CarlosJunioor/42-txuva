@@ -6,7 +6,7 @@
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 14:03:26 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/18 15:25:18 by carloda-         ###   ########.fr       */
+/*   Updated: 2022/08/18 18:38:30 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,29 @@
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	unsigned int	count_a;
-	unsigned int	count_b;
+	unsigned int count;
+	unsigned int res;
 
-	count_a = 0;
-	count_b = 0;
-	while (src[count_a] != '\0')
+	count = 0;
+	res = 0;
+	while (src[count] && count < size - 1)
 	{
-		count_a++;
 		if (size < 1)
-		{
-			return (count_a);
-		}
-		while (count_b < (size - 1) && src[count_b] != '\0')
-		{
-		dest[count_b] = src[count_b];
-		count_b++;
-		}
+		return (res);
+		else
+		dest[count] = src[count];
+		count++;
 	}
-	dest[count_b] = '\0';
-	return (count_b);
+	dest[count] = '\0';
+	return (res);
 }
 
-// int main(void)
-// {
-// 	char src[] = "hithisisateste";
-// 	char dest[5];
+int main(void)
+{
+	char src[] = "hithisisateste";
+	char dest[10];
 
-// 	ft_strlcpy(dest, src, 5);
-// 	printf("%s", dest);
-// 	return (0);
-// }
+	ft_strlcpy(dest, src, 5);
+	printf("%s", dest);
+	return (0);
+}

@@ -6,7 +6,7 @@
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 18:21:05 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/18 13:56:27 by carloda-         ###   ########.fr       */
+/*   Updated: 2022/08/18 18:37:31 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_str_is_uppercase(char *str)
 	count = 0;
 	while (str[count] != '\0')
 	{
-		if (str[count] <= 'A' || str[count] >= 'Z')
+		if (str[count] < 'A' || str[count] > 'Z')
 		{
 			return (0);
 		}
