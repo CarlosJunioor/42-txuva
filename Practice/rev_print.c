@@ -1,33 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   rev_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 19:24:25 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/20 13:47:08 by carloda-         ###   ########.fr       */
+/*   Created: 2022/08/19 15:57:43 by carloda-          #+#    #+#             */
+/*   Updated: 2022/08/19 16:29:17 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include<unistd.h>
 
-int	ft_strcmp(char *s1, char *s2)
+int ft_strlen(char *str)
 {
-	unsigned int count;
-
-	count = 0;
-	while (s1[count] == s2[count] && (s1[count] != '\0' || s2[count] != '\0'))
-	{
-		count++;
-	}
-	return (s1[count] - s2[count]);
+    int count;
+    
+    count = 0;
+    while(str[count])
+    {
+        count++;
+    }
+    return (count);
 }
 
-int main(void)
+char *ft_rev_print(char *str)
 {
-	printf("%d", ft_strcmp("Hello", "Hello1"));
-	printf("\n%d", ft_strcmp("Hello", "He"));
-	printf("\n%d", ft_strcmp("He", "Hello"));
-	printf("\n%d", ft_strcmp("Hello", "Hello"));
+   int i;
+
+   i = ft_strlen(str)-1;
+   while(i >= 0)
+   {
+       write(1,(str+i),1);
+       i--;
+   }
+   return (str);
+}
+
+int main(){
+
+    ft_rev_print("abcdefg");
+    write(1, "\n", 1);
+
+
 }
