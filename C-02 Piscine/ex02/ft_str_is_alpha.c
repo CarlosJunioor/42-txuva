@@ -6,7 +6,7 @@
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 12:40:36 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/18 18:42:17 by carloda-         ###   ########.fr       */
+/*   Updated: 2022/08/21 13:22:12 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	ft_str_is_alpha(char *str)
 	count = 0;
 	while (str[count] != '\0')
 	{
-		if (str[count] < 65 || str[count] > 122)
+		if (str[count] < 'A' || str[count] < 'Z'
+			&& str[count] < 'a' || str[count] < 'z')
 			return (0);
 		count++;
 	}
