@@ -6,7 +6,7 @@
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 19:43:54 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/22 19:59:41 by carloda-         ###   ########.fr       */
+/*   Updated: 2022/08/22 20:12:06 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@ void putchar(char c)
 }
 void ft_putnbr(int nb)
 {
-    if (nb == 2147483647)
+    if (nb == -2147483647)
     {
         putchar('-');
         putchar('2');
+        ft_putnbr(147483647);
     }
     
+    return (0);
 }
 
 int main()
