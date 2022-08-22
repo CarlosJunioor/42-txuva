@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 19:13:13 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/21 15:30:37 by carloda-         ###   ########.fr       */
+/*   Created: 2022/08/22 19:27:17 by carloda-          #+#    #+#             */
+/*   Updated: 2022/08/22 19:35:02 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
+#include<unistd.h>
 
-int	ft_str_is_printable(char *str)
+void ft_putstr(char *str)
 {
-	int	count;
+    int count;
 
-	count = 0;
-	while (str[count] != '0')
-	{
-		if ((str[count] < 33) || (str[count] > 126))
-		{
-			return (0);
-		}
-		count++;
-	}
-	return (1);
+    count = 0;
+    while (str[count] != '\0')
+    {
+        write(1, &str[count], 1);
+        count++;
+    }
 }
 
-// int main(void)
-// {
-// 	char str[] = "sadfasd@@@@@fasdf";
-// 	//char str[] = "";
-// 	//printf("%d \n", str);
-// 	printf("%d", ft_str_is_printable(str));
-// }
+int main()
+{
+    char string[] = "helloworld";
+    
+    ft_putstr(string);
+    
+}

@@ -1,37 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   rev_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 19:13:13 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/21 15:30:37 by carloda-         ###   ########.fr       */
+/*   Created: 2022/08/19 15:57:43 by carloda-          #+#    #+#             */
+/*   Updated: 2022/08/19 16:29:17 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include<unistd.h>
 
-int	ft_str_is_printable(char *str)
+int ft_strlen(char *str)
 {
-	int	count;
-
-	count = 0;
-	while (str[count] != '0')
-	{
-		if ((str[count] < 33) || (str[count] > 126))
-		{
-			return (0);
-		}
-		count++;
-	}
-	return (1);
+    int count;
+    
+    count = 0;
+    while(str[count])
+    {
+        count++;
+    }
+    return (count);
 }
 
-// int main(void)
-// {
-// 	char str[] = "sadfasd@@@@@fasdf";
-// 	//char str[] = "";
-// 	//printf("%d \n", str);
-// 	printf("%d", ft_str_is_printable(str));
-// }
+char *ft_rev_print(char *str)
+{
+   int i;
+
+   i = ft_strlen(str)-1;
+   while(i >= 0)
+   {
+       write(1,(str+i),1);
+       i--;
+   }
+   return (str);
+}
+
+int main(){
+
+    ft_rev_print("abcdefg");
+    write(1, "\n", 1);
+
+
+}

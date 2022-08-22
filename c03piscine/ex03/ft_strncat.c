@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 19:13:13 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/21 15:30:37 by carloda-         ###   ########.fr       */
+/*   Created: 2022/08/21 12:40:50 by carloda-          #+#    #+#             */
+/*   Updated: 2022/08/21 19:06:40 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-
-int	ft_str_is_printable(char *str)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	count;
+	unsigned int	count_a;
+	unsigned int	count_b;
 
-	count = 0;
-	while (str[count] != '0')
+	count_a = 0;
+	count_b = 0;
+	while (dest[count_a] != '\0' && count_a < nb)
 	{
-		if ((str[count] < 33) || (str[count] > 126))
-		{
-			return (0);
-		}
-		count++;
+		count_a++;
 	}
-	return (1);
+	while (src[count_b] != '\0' && count_b < nb)
+	{
+		dest[count_a] = src[count_b];
+		count_a++;
+		count_b++;
+	}
+	dest[count_a] = '\0';
+	return (dest);
 }
-
-// int main(void)
-// {
-// 	char str[] = "sadfasd@@@@@fasdf";
-// 	//char str[] = "";
-// 	//printf("%d \n", str);
-// 	printf("%d", ft_str_is_printable(str));
-// }

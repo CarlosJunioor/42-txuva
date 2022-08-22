@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 19:13:13 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/21 15:30:37 by carloda-         ###   ########.fr       */
+/*   Created: 2022/08/22 12:12:32 by carloda-          #+#    #+#             */
+/*   Updated: 2022/08/22 17:50:22 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-
-int	ft_str_is_printable(char *str)
+char	*ft_strstr(char *str, char *to_find)
 {
-	int	count;
+	int	count_a;
+	int	count_b;
 
-	count = 0;
-	while (str[count] != '0')
+	if (to_find[0] == '\0')
 	{
-		if ((str[count] < 33) || (str[count] > 126))
-		{
-			return (0);
-		}
-		count++;
+		return (str);
 	}
-	return (1);
+	count_a = 0;
+	while (str[count_a] != '\0')
+	{
+	count_b = 0;
+		while (str[count_a + count_a] != '\0'
+			&& str[count_a + count_b] == to_find[count_b])
+		{
+			if (to_find[count_b + 1] == '\0')
+			{
+				return (&str[count_a]);
+			}
+		count_b++;
+		}
+	count_a++;
+	}
+	return (0);
 }
-
-// int main(void)
-// {
-// 	char str[] = "sadfasd@@@@@fasdf";
-// 	//char str[] = "";
-// 	//printf("%d \n", str);
-// 	printf("%d", ft_str_is_printable(str));
-// }

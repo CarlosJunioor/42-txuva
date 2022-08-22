@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 19:13:13 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/21 15:30:37 by carloda-         ###   ########.fr       */
+/*   Created: 2022/08/20 19:00:31 by carloda-          #+#    #+#             */
+/*   Updated: 2022/08/22 17:48:15 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-
-int	ft_str_is_printable(char *str)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	int	count;
 
 	count = 0;
-	while (str[count] != '0')
+	while (s1[count] == s2[count] && s1[count] != '\0' 
+		&& s2[count] != '\0' && count < n)
 	{
-		if ((str[count] < 33) || (str[count] > 126))
-		{
-			return (0);
-		}
 		count++;
 	}
-	return (1);
+	return (s1[count] - s2[count]);
 }
-
-// int main(void)
-// {
-// 	char str[] = "sadfasd@@@@@fasdf";
-// 	//char str[] = "";
-// 	//printf("%d \n", str);
-// 	printf("%d", ft_str_is_printable(str));
-// }

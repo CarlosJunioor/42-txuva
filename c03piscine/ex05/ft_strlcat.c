@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 19:13:13 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/21 15:30:37 by carloda-         ###   ########.fr       */
+/*   Created: 2022/08/22 12:12:36 by carloda-          #+#    #+#             */
+/*   Updated: 2022/08/22 17:53:36 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
-
-int	ft_str_is_printable(char *str)
+unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int	count;
+    int count_a;
+    unsigned int lenght;
 
-	count = 0;
-	while (str[count] != '0')
-	{
-		if ((str[count] < 33) || (str[count] > 126))
-		{
-			return (0);
-		}
-		count++;
-	}
-	return (1);
+    count_a = 0;
+    while (src[count_a] != '\0')
+    {
+        count_a++;
+    }
+    return (dest[count_a]);
 }
-
-// int main(void)
-// {
-// 	char str[] = "sadfasd@@@@@fasdf";
-// 	//char str[] = "";
-// 	//printf("%d \n", str);
-// 	printf("%d", ft_str_is_printable(str));
-// }
