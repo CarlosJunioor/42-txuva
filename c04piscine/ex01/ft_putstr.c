@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/20 19:00:31 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/22 17:48:15 by carloda-         ###   ########.fr       */
+/*   Created: 2022/08/22 19:27:17 by carloda-          #+#    #+#             */
+/*   Updated: 2022/08/22 19:35:02 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	int	count;
+#include<stdio.h>
+#include<unistd.h>
 
-	count = 0;
-	while (s1[count] == s2[count] && s1[count] != '\0' 
-		&& s2[count] != '\0' && count < n)
-	{
-		count++;
-	}
-	return (s1[count] - s2[count]);
+void ft_putstr(char *str)
+{
+    int count;
+
+    count = 0;
+    while (str[count] != '\0')
+    {
+        write(1, &str[count], 1);
+        count++;
+    }
+}
+
+int main()
+{
+    char string[] = "helloworld";
+    
+    ft_putstr(string);
+    
 }
