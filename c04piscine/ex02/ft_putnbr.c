@@ -13,18 +13,25 @@
 #include<stdio.h>
 #include<unistd.h>
 
-void putchar(char c)
+void put_char(char c)
 {
-    write(1, c, 1);
+    write(1, &c, 1);
 }
 void ft_putnbr(int nb)
 {
-    if (nb == 2147483647)
+    if (nb >= 0 && nb < 10)
+    {
+        put_char(nb + '0');
+    }else
+    if (nb < 0)
     {
         putchar('-');
-        putchar('2');
+        ft_putnbr(nb*(-1));
+    }else
+    {
+        ft_putnbr(nb/10);
+        ft_putnbr(nb%10);
     }
-    
 }
 
 int main()
