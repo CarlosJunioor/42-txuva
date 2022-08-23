@@ -6,7 +6,7 @@
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 16:29:08 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/23 16:34:02 by carloda-         ###   ########.fr       */
+/*   Updated: 2022/08/23 17:31:03 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void ft_putchar(char c)
     write(1, &c, 1);
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
     int i;
     while (argv[0][i] != '\0' && argc)
