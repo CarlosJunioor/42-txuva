@@ -6,33 +6,33 @@
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 12:12:32 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/22 17:50:22 by carloda-         ###   ########.fr       */
+/*   Updated: 2022/08/23 14:57:39 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	int	count_a;
-	int	count_b;
+	int	i;
+	int	k;
 
-	if (to_find[0] == '\0')
+	i = 0;
+	k = 0;
+	if (to_find[k] == '\0')
 	{
 		return (str);
 	}
-	count_a = 0;
-	while (str[count_a] != '\0')
+	while (str[i] != '\0')
 	{
-	count_b = 0;
-		while (str[count_a + count_a] != '\0'
-			&& str[count_a + count_b] == to_find[count_b])
+		k = 0;
+		while (str[i + k] == to_find[k] && str[i + k] != '\0')
 		{
-			if (to_find[count_b + 1] == '\0')
+			k++;
+			if (to_find[k] == '\0')
 			{
-				return (&str[count_a]);
+				return (str + i);
 			}
-		count_b++;
 		}
-	count_a++;
+		i++;
 	}
 	return (0);
 }

@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/21 12:40:50 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/23 13:47:24 by carloda-         ###   ########.fr       */
+/*   Created: 2022/08/23 16:29:08 by carloda-          #+#    #+#             */
+/*   Updated: 2022/08/23 16:34:02 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
-{
-	unsigned int	count_a;
-	unsigned int	count_b;
+#include<unistd.h>
 
-	count_a = 0;
-	count_b = 0;
-	while (dest[count_a] != '\0')
-	{
-		count_a++;
-	}
-	while (src[count_b] != '\0' && count_b < nb)
-	{
-		dest[count_a] = src[count_b];
-		count_a++;
-		count_b++;
-	}
-	dest[count_a] = '\0';
-	return (dest);
+void ft_putchar(char c)
+{
+    write(1, &c, 1);
+}
+
+int main(int argc, char *argv[])
+{
+    int i;
+    while (argv[0][i] != '\0' && argc)
+    {
+        ft_putchar(argv[0][i]);
+        i++;
+    }
+    ft_putchar('\n');
+    return (0);
 }
