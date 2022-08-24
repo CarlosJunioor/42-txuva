@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   fizzbuzz.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/24 18:18:27 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/24 19:57:21 by carloda-         ###   ########.fr       */
+/*   Created: 2022/08/24 20:07:30 by carloda-          #+#    #+#             */
+/*   Updated: 2022/08/24 20:20:12 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include <unistd.h>
 
-int main(int argc, char **argv)
+void	ft_write_number(int number)
 {
-    int i;
-    int x;
+	if (number > 9)
+		ft_write_number(number / 10);
+	write(1, &"0123456789"[number % 10], 1);
+}
 
-    i = 0;
-    x = argc;
-     
-    while (x > argc - 1)
-    {
-        i = 0;
-        printf(" ");
-        while (argv[x][i] != '\0')
-        {
-            printf("%c", argv[x][i]);
-            i++;
-        }
-        x--;  
-    }
-    return (0);
+int	main(void)
+{
+	int	number;
+
+	number = 1;
+	while (number <= 100)
+	{
+			ft_write_number(number);
+		number++;
+	}
 }
