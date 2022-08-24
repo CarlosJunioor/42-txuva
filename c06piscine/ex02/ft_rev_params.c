@@ -6,7 +6,7 @@
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 18:18:27 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/24 18:27:29 by carloda-         ###   ########.fr       */
+/*   Updated: 2022/08/24 18:46:17 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ int main(int argc, char **argv)
     int x;
 
     i = 0;
-    x = 1;
-    while (x < argc)
+    x = argc;
+     
+    while (x > argc - 1)
     {
         i = 0;
         printf(" ");
@@ -28,7 +29,9 @@ int main(int argc, char **argv)
             printf("%c", argv[x][i]);
             i++;
         }
-        x++;
+        x--;  
     }
+        
+    
     return (0);
 }

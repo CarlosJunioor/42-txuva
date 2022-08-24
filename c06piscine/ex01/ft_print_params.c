@@ -6,11 +6,11 @@
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 19:58:19 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/24 18:25:51 by carloda-         ###   ########.fr       */
+/*   Updated: 2022/08/24 18:37:24 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include<unistd.h>
 
 int main(int argc, char **argv)
 {
@@ -22,10 +22,9 @@ int main(int argc, char **argv)
     while (x < argc)
     {
         i = 0;
-        printf(" ");
             while (argv[x][i] != '\0')
             {
-                printf("%c", argv[x][i]);
+                write(1, &argv[x][i], 1);
                 i++; 
             }
         x++;
