@@ -6,30 +6,29 @@
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 18:18:27 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/24 19:57:21 by carloda-         ###   ########.fr       */
+/*   Updated: 2022/08/25 21:18:38 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include<unistd.h>
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    int i;
-    int x;
+	int	i;
+	int	x;
 
-    i = 0;
-    x = argc;
-     
-    while (x > argc - 1)
-    {
-        i = 0;
-        printf(" ");
-        while (argv[x][i] != '\0')
-        {
-            printf("%c", argv[x][i]);
-            i++;
-        }
-        x--;  
-    }
-    return (0);
+	i = 0;
+	x = argc - 1;
+	while (x > 0)
+	{
+		i = 0;
+		while (argv[x][i] != '\0')
+		{
+			write (1, &argv[x][i], 1);
+			i++;
+		}
+		write(1, "\n", 1);
+		x--;
+	}
+	return (0);
 }

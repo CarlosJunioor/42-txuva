@@ -6,28 +6,28 @@
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 19:58:19 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/24 18:37:24 by carloda-         ###   ########.fr       */
+/*   Updated: 2022/08/25 21:19:43 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    int i;
-    int x;
+	int	i;
+	int	x;
 
-    i = 0;
-    x = 1;
-    while (x < argc)
-    {
-        i = 0;
-            while (argv[x][i] != '\0')
-            {
-                write(1, &argv[x][i], 1);
-                i++; 
-            }
-        x++;
-    } 
-    return (0);
+	i = 0;
+	x = 1;
+	while (x < argc)
+	{
+		i = 0;
+		while (argv[x][i] != '\0')
+		{
+			write(1, &argv[x][i], 1);
+			i++;
+		}
+		x++;
+	}
+	return (0);
 }

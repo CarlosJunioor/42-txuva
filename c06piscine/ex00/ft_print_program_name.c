@@ -6,21 +6,21 @@
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 16:29:08 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/23 19:58:03 by carloda-         ###   ########.fr       */
+/*   Updated: 2022/08/25 21:20:06 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
 
-int main (int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (argv[0][i] != '\0')
-    {
-        printf("%c", argv[0][i]);
-        i++;
-    }
-    return (0);
+	i = 0;
+	while (argv[0][i] != '\0')
+	{
+		printf("%c", argv[0][i]);
+		i++;
+	}
+	return (0);
 }
