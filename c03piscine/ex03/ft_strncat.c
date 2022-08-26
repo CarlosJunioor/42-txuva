@@ -6,7 +6,7 @@
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 12:40:50 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/21 19:06:40 by carloda-         ###   ########.fr       */
+/*   Updated: 2022/08/24 14:40:42 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 
 	count_a = 0;
 	count_b = 0;
-	while (dest[count_a] != '\0' && count_a < nb)
+	while (dest[count_a] != '\0')
 	{
 		count_a++;
 	}

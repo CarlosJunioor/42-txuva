@@ -1,4 +1,5 @@
 # 42-txuva
 Piscine 42
 
-this is all my projects i did on the 2022 July Piscine/
+<h2>All projects im doing currently in the 42Lisbon Piscine.</h2>
+

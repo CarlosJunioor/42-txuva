@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/22 19:43:54 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/22 19:59:41 by carloda-         ###   ########.fr       */
+/*   Created: 2022/08/24 18:18:27 by carloda-          #+#    #+#             */
+/*   Updated: 2022/08/25 21:18:38 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
 #include<unistd.h>
 
-void put_char(char c)
+int	main(int argc, char **argv)
 {
-    write(1, &c, 1);
-}
-void ft_putnbr(int nb)
-{
-    if (nb >= 0 && nb < 10)
-    {
-        put_char(nb + '0');
-    }else
-    if (nb < 0)
-    {
-        putchar('-');
-        ft_putnbr(nb*(-1));
-    }else
-    {
-        ft_putnbr(nb/10);
-        ft_putnbr(nb%10);
-    }
-}
+	int	i;
+	int	x;
 
-int main()
-{
-    ft_putnbr(42);
+	i = 0;
+	x = argc - 1;
+	while (x > 0)
+	{
+		i = 0;
+		while (argv[x][i] != '\0')
+		{
+			write (1, &argv[x][i], 1);
+			i++;
+		}
+		write(1, "\n", 1);
+		x--;
+	}
+	return (0);
 }

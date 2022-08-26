@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   aff_z.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/22 19:22:20 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/22 19:26:50 by carloda-         ###   ########.fr       */
+/*   Created: 2022/08/25 16:14:36 by carloda-          #+#    #+#             */
+/*   Updated: 2022/08/25 16:30:57 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include<unistd.h>
 #include<stdio.h>
-int	ft_strlen(char *str)
-{
-    int count;
 
-    count = 0;
-    while (str[count] != '\0')
+void ft_putchar(char c)
+{
+    write(1, &c, 1);
+}
+void    ft_print_numbers(void)
+{
+    char n;
+
+    n = 0;
+    while(n <= '9')
     {
-        count++;
+        ft_putchar(n);
+        n++;
     }
-	return (count);
 }
 
 int main()
 {
-	char string[] = "hello";
-
-    printf("%d ", ft_strlen(string));
-    
+    ft_print_numbers();
+    return (0);
 }

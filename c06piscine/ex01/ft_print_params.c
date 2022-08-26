@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carloda- <carloda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/22 12:12:36 by carloda-          #+#    #+#             */
-/*   Updated: 2022/08/22 17:53:36 by carloda-         ###   ########.fr       */
+/*   Created: 2022/08/23 19:58:19 by carloda-          #+#    #+#             */
+/*   Updated: 2022/08/25 21:19:43 by carloda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
-{
-    int count_a;
-    unsigned int lenght;
+#include<unistd.h>
 
-    count_a = 0;
-    while (src[count_a] != '\0')
-    {
-        count_a++;
-    }
-    return (dest[count_a]);
+int	main(int argc, char **argv)
+{
+	int	i;
+	int	x;
+
+	i = 0;
+	x = 1;
+	while (x < argc)
+	{
+		i = 0;
+		while (argv[x][i] != '\0')
+		{
+			write(1, &argv[x][i], 1);
+			i++;
+		}
+		x++;
+	}
+	return (0);
 }
