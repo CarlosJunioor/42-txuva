@@ -26,6 +26,7 @@ int main (void)
     number = 1;
     while (number <= 100)
     {
+        write(1, "a", 1);
         ft_write_number(number);
         write(1, "\n", 1);
         number++;
