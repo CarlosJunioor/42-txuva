@@ -12,12 +12,23 @@
 
 #include<unistd.h>
 
-void ft_write_numbers(int numbers)
+void ft_write_numbers(int number)
 {
-
+    if (number > 9)
+    ft_write_numbers(number / 10);
+    write(1, &"0123456789"[number % 10], 1);
 }
 
 int main ()
 {
-    
+    int i;
+
+    i = 0;
+    while (i <= 100)
+    {
+        ft_write_numbers(i);
+        write(1," ", 1);
+        i++;
+    }
+    return 0;
 }
