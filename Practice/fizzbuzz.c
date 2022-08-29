@@ -26,9 +26,6 @@ int main ()
     i = 0;
     while (i <= 100)
     {
-        ft_write_numbers(i);
-        write(1," ", 1);
-        i++;
-    }
+        
     return 0;
 }
