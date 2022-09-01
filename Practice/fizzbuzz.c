@@ -22,11 +22,11 @@ void ft_write_numbers(int number)
 int main ()
 {
     int i;
-
     i = 0;
     while (i <= 100)
     {
-        ft_write_numbers();
+        ft_write_numbers(i);
+        i++;
     }
     return 0;
 }
