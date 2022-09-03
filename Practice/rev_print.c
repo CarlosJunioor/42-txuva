@@ -40,7 +40,6 @@ char *ft_rev_print(char *str)
 int main(){
 
     ft_rev_print("abcdefg");
-    ft_rev_print("abcdefg");
     write(1, "\n", 1);
 
 }
